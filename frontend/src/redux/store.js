@@ -15,6 +15,8 @@ import {
 import {
   orderCreateReducer,
   orderDetailsReducer,
+  orderPayReducer,
+  myListOrdersReducer,
 } from "./reducers/orderReducers";
 
 const reducer = combineReducers({
@@ -27,6 +29,8 @@ const reducer = combineReducers({
   userUpdate: userUpdateReducer,
   orderCreate: orderCreateReducer,
   orderDetails: orderDetailsReducer,
+  orderPay: orderPayReducer,
+  orderListMy: myListOrdersReducer,
 });
 
 // Ambil data cartItems dari local storage
