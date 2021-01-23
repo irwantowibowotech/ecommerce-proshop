@@ -24,7 +24,7 @@ const UserListsScren = ({ history }) => {
     } else {
       history.push("/login");
     }
-  }, [dispatch, history, successDelete]);
+  }, [dispatch, history, successDelete, userInfo]);
 
   const deleteHandler = (id) => {
     if (window.confirm("Are you sure?")) {
@@ -52,7 +52,7 @@ const UserListsScren = ({ history }) => {
           </thead>
           <tbody>
             {users.map((user) => (
-              <tr key={user.id}>
+              <tr key={user._id}>
                 <td>{user._id}</td>
                 <td>{user.name}</td>
                 <td>
@@ -66,7 +66,7 @@ const UserListsScren = ({ history }) => {
                   )}
                 </td>
                 <td>
-                  <LinkContainer to={`/user/${user._id}/edit`}>
+                  <LinkContainer to={`/admin/user/${user._id}/edit`}>
                     <Button variant="warning" className="btn-sm">
                       <i className="fas fa-edit"></i>
                     </Button>
