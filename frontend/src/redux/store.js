@@ -23,6 +23,8 @@ import {
   orderDetailsReducer,
   orderPayReducer,
   myListOrdersReducer,
+  listOrdersReducer,
+  orderDeliverReducer,
 } from "./reducers/orderReducers";
 
 const reducer = combineReducers({
@@ -43,6 +45,8 @@ const reducer = combineReducers({
   productDelete: productDeleteReducer,
   productCreate: productCreateReducer,
   productUpdate: productUpdateReducer,
+  listOrders: listOrdersReducer,
+  orderDeliver: orderDeliverReducer,
 });
 
 // Ambil data cartItems dari local storage
