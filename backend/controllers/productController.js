@@ -5,7 +5,17 @@ import Product from "../models/productModel.js";
 // @route   GET /api/products
 // @access  Public
 const getProducts = asyncHandler(async (req, res) => {
-  const products = await Product.find({});
+  //dapatkan keyword dari data api yang dikirim FE
+  const keyword = req.query.keyword
+    ? {
+        name: {
+          $regex: req.query.keyword,
+          $options: "i", // maksudnya adalah tidak case sensitive
+        },
+      }
+    : {}; //jika tidak ada kasih keywordnya kosong aja
+
+  const products = await Product.find({ ...keyword });
 
   // res.status(401);
   // throw new Error("Not Authorize");
